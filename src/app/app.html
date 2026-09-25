@@ -1,3 +1,30 @@
-<app-shopping-cart />
+<div class="min-h-screen bg-gray-50 font-sans text-gray-900">
+  <nav class="border-b border-gray-200 bg-white shadow-sm">
+    <div class="mx-auto flex max-w-4xl items-center gap-2 px-4 py-3">
+      <span class="mr-4 text-lg font-bold text-indigo-600">{{ title() }}</span>
+      <a
+        class="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-900"
+        routerLink="/"
+        routerLinkActive="bg-indigo-50 text-indigo-700"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+      <a
+        class="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-900"
+        routerLink="/cart"
+        routerLinkActive="bg-indigo-50 text-indigo-700"
+        >Cart</a
+      >
+      <a
+        class="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-900"
+        routerLink="/user"
+        routerLinkActive="bg-indigo-50 text-indigo-700"
+        >User</a
+      >
+    </div>
+  </nav>
 
-<router-outlet />
+  <main class="mx-auto max-w-4xl px-4 py-8">
+    <router-outlet />
+  </main>
+</div>

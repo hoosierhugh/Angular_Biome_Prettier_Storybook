@@ -38,7 +38,7 @@
     "prettier": "^3.9.9",
     "tailwindcss": "^4.3.3",
     "typescript": "~6.0.2",
-    "vitest": "^4.1.11",
+    "vitest": "^5.0.2",
     "storybook": "^10.6.0",
     "@storybook/angular-vite": "^10.6.0",
     "@chromatic-com/storybook": "^5.3.1",
@@ -52,8 +52,8 @@
     "@angular/animations": "^22.2.0",
     "@analogjs/vite-plugin-angular": "^2.5.2",
     "vite": "latest",
-    "@vitest/browser-playwright": "^4.1.11",
-    "@vitest/coverage-v8": "^4.1.11",
+    "@vitest/browser-playwright": "^5.0.2",
+    "@vitest/coverage-v8": "^5.0.2",
     "playwright": "^1.63.0"
   }
 }

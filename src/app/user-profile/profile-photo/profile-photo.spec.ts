@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { type ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfilePhoto } from './profile-photo';
 
@@ -8,9 +8,8 @@ describe('ProfilePhoto', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProfilePhoto]
-    })
-    .compileComponents();
+      imports: [ProfilePhoto],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ProfilePhoto);
     component = fixture.componentInstance;

@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { type ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserBiography } from './user-biography';
 
@@ -8,9 +8,8 @@ describe('UserBiography', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UserBiography]
-    })
-    .compileComponents();
+      imports: [UserBiography],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(UserBiography);
     component = fixture.componentInstance;

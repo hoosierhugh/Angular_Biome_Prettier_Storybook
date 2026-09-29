@@ -16,6 +16,7 @@
     "build-storybook": "STORYBOOK_DISABLE_TELEMETRY=true ng run Counter:build-storybook"
   },
   "private": true,
+  "type": "module",
   "packageManager": "pnpm@11.10.0",
   "dependencies": {
     "@angular/common": "^22.2.0",

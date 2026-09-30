@@ -1,6 +1,6 @@
 # Angular (22+) + Biome + Prettier + Storybook Set Up
 
-Repo for my Angular 22+, Storybook 10.6+, Biome, and Prettier set up that goes with my YouTube video.
+Repo for my Angular 22+, Storybook 10.6+, Biome, and Prettier set up that goes with my YouTube video, https://www.youtube.com/watch?v=9sJB_bxNF5Q.
 
 ## Why Biome + Prettier?
 

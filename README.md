@@ -1,8 +1,10 @@
-# Angular (22+) + Biome + Prettier Set Up
+# Angular (22+) + Biome + Prettier + Storybook Set Up
 
-If you want to avoid ESLint hell, this is a working setup for Angular 22+ projects that uses Biome for linting/formatting TS/JS/JSON/CSS and Prettier for formatting HTML templates.
+Repo for my Angular 22+, Storybook 10.6+, Biome, and Prettier set up that goes with my YouTube video.
 
 ## Why Biome + Prettier?
+
+If you want to avoid ESLint hell, this is a working setup for Angular 22+ projects that uses Biome for linting/formatting TS/JS/JSON/CSS and Prettier for formatting HTML templates.
 
 Split by file type — each tool owns different files, no overlap:
 

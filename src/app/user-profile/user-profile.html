@@ -2,7 +2,6 @@
   <h1 class="text-2xl font-bold text-gray-900">User Profile</h1>
 
   @if (user(); as user) {
-    <p>{{ user.name.first }} {{ user.name.last }}</p>
     <app-profile-photo [photoUrl]="user.picture.large" />
     <app-user-biography
       [fullName]="user.name.first + ' ' + user.name.last"

@@ -12,6 +12,15 @@ describe('UserBiography', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(UserBiography);
+    fixture.componentRef.setInput('fullName', 'Ada Lovelace');
+    fixture.componentRef.setInput('email', 'ada@example.com');
+    fixture.componentRef.setInput('address', {
+      street: { number: 1, name: 'Main Street' },
+      city: 'Indianapolis',
+      state: 'Indiana',
+      country: 'United States',
+      postcode: '46204',
+    });
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

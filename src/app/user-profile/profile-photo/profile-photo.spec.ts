@@ -12,6 +12,7 @@ describe('ProfilePhoto', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProfilePhoto);
+    fixture.componentRef.setInput('photoUrl', 'https://example.com/profile.jpg');
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

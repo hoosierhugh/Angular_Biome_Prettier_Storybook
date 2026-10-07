@@ -1,30 +1,30 @@
-<div class="min-h-screen bg-gray-50 font-sans text-gray-900">
-  <nav class="border-b border-gray-200 bg-white shadow-sm">
-    <div class="mx-auto flex max-w-4xl items-center gap-2 px-4 py-3">
-      <span class="mr-4 text-lg font-bold text-indigo-600">{{ title() }}</span>
+<div class="app-shell min-vh-100">
+  <nav class="app-nav bg-white">
+    <div class="app-container app-nav-bar mx-auto d-flex align-items-center gap-2 px-3">
+      <span class="app-brand me-3 fw-bold">{{ title() }}</span>
       <a
-        class="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-900"
+        class="app-nav-link rounded py-2 fw-medium text-decoration-none"
         routerLink="/"
-        routerLinkActive="bg-indigo-50 text-indigo-700"
+        routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         >Home</a
       >
       <a
-        class="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-900"
+        class="app-nav-link rounded py-2 fw-medium text-decoration-none"
         routerLink="/cart"
-        routerLinkActive="bg-indigo-50 text-indigo-700"
+        routerLinkActive="active"
         >Cart</a
       >
       <a
-        class="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-900"
+        class="app-nav-link rounded py-2 fw-medium text-decoration-none"
         routerLink="/user"
-        routerLinkActive="bg-indigo-50 text-indigo-700"
+        routerLinkActive="active"
         >User</a
       >
     </div>
   </nav>
 
-  <main class="mx-auto max-w-4xl px-4 py-8">
+  <main class="app-container app-main mx-auto px-3">
     <router-outlet />
   </main>
 </div>

@@ -1,3 +1,183 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import 'tailwindcss';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/*
+ * Bootstrap has no equivalent for some of the colors, sizes and spacing this app uses,
+ * so the classes below keep the exact look of the original Tailwind version.
+ * Bootstrap utilities (d-flex, px-3, fw-bold, ...) are used in the templates wherever
+ * their values already match.
+ */
+
+:root {
+  --bs-body-font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --bs-body-color: #000;
+  --bs-body-color-rgb: 0, 0, 0;
+
+  --app-red-600: oklch(57.7% 0.245 27.325);
+  --app-green-600: oklch(62.7% 0.194 149.214);
+  --app-indigo-50: oklch(96.2% 0.018 272.314);
+  --app-indigo-500: oklch(58.5% 0.233 277.117);
+  --app-indigo-600: oklch(51.1% 0.262 276.966);
+  --app-indigo-700: oklch(45.7% 0.24 277.023);
+  --app-gray-50: oklch(98.5% 0.002 247.839);
+  --app-gray-100: oklch(96.7% 0.003 264.542);
+  --app-gray-200: oklch(92.8% 0.006 264.531);
+  --app-gray-300: oklch(87.2% 0.01 258.338);
+  --app-gray-400: oklch(70.7% 0.022 261.325);
+  --app-gray-600: oklch(44.6% 0.03 256.802);
+  --app-gray-700: oklch(37.3% 0.034 259.733);
+  --app-gray-900: oklch(21% 0.034 264.665);
+
+  --app-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Layout */
+
+.app-shell {
+  background-color: var(--app-gray-50);
+  color: var(--app-gray-900);
+}
+
+.app-nav {
+  border-bottom: 1px solid var(--app-gray-200);
+  box-shadow: var(--app-shadow-sm);
+}
+
+.app-container {
+  max-width: 56rem;
+}
+
+.app-nav-bar {
+  padding-block: 0.75rem;
+}
+
+.app-main {
+  padding-block: 2rem;
+}
+
+.app-brand {
+  font-size: 1.125rem;
+  line-height: calc(1.75 / 1.125);
+  color: var(--app-indigo-600);
+}
+
+.app-nav-link {
+  padding-inline: 0.75rem;
+  font-size: 0.875rem;
+  line-height: calc(1.25 / 0.875);
+  color: var(--app-gray-600);
+  transition-property: color, background-color;
+  transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-nav-link.active {
+  background-color: var(--app-indigo-50);
+  color: var(--app-indigo-700);
+}
+
+@media (hover: hover) {
+  .app-nav-link:hover {
+    background-color: var(--app-gray-100);
+    color: var(--app-gray-900);
+  }
+}
+
+/* Cards */
+
+.app-card {
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow:
+    0 0 0 1px var(--app-gray-200),
+    var(--app-shadow-sm);
+}
+
+.app-title {
+  font-size: 1.875rem;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--app-gray-900);
+}
+
+.app-subtitle {
+  color: var(--app-gray-600);
+}
+
+.app-profile-title {
+  font-size: 1.5rem;
+  line-height: calc(2 / 1.5);
+  color: var(--app-gray-900);
+}
+
+/* Shopping cart */
+
+.app-cart {
+  width: 20rem;
+}
+
+.app-cart-title {
+  font-size: 1.125rem;
+  line-height: calc(1.75 / 1.125);
+  color: var(--app-gray-900);
+}
+
+.app-cart-quantity {
+  font-size: 1.875rem;
+  line-height: 1.2;
+}
+
+.app-cart-actions {
+  gap: 0.75rem;
+}
+
+.app-status-available {
+  color: var(--app-green-600);
+}
+
+.app-status-full {
+  color: var(--app-red-600);
+}
+
+/* Buttons */
+
+.app-btn {
+  border: 0;
+  font-size: 0.875rem;
+  line-height: calc(1.25 / 0.875);
+  cursor: pointer;
+  transition-property: color, background-color;
+  transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-btn-secondary {
+  background-color: #fff;
+  color: var(--app-gray-700);
+  box-shadow: 0 0 0 1px var(--app-gray-300);
+}
+
+.app-btn-primary {
+  background-color: var(--app-indigo-600);
+  color: #fff;
+}
+
+@media (hover: hover) {
+  .app-btn-secondary:hover {
+    background-color: var(--app-gray-50);
+  }
+
+  .app-btn-primary:hover {
+    background-color: var(--app-indigo-500);
+  }
+}
+
+/* Declared after the hover rules so a disabled button stays gray under the pointer. */
+.app-btn:disabled {
+  background-color: var(--app-gray-100);
+  color: var(--app-gray-400);
+  cursor: not-allowed;
+}

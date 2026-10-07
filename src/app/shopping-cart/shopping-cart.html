@@ -1,21 +1,21 @@
-<div class="mx-auto w-80 rounded-xl bg-white p-6 text-center shadow-sm ring-1 ring-gray-200">
-  <h3 class="text-lg font-semibold text-gray-900">Shopping Cart Item</h3>
+<div class="app-card app-cart mx-auto bg-white p-4 text-center">
+  <h3 class="app-cart-title mb-0 fw-semibold">Shopping Cart Item</h3>
 
   <!-- Display the current state -->
-  <div class="my-4 text-3xl">
+  <div class="app-cart-quantity my-3">
     Quantity: <strong>{{ quantity() }}</strong>
   </div>
 
   <!-- Feedback Message: Changes color and text based on state -->
-  <p [class]="isFull() ? 'text-red-600 font-bold' : 'text-green-600 font-bold'">
+  <p [class]="isFull() ? 'app-status-full fw-bold mb-0' : 'app-status-available fw-bold mb-0'">
     {{ isFull() ? 'Maximum stock reached (10)!' : 'Items available to add.' }}
   </p>
 
-  <div class="mt-4 flex justify-center gap-3">
+  <div class="app-cart-actions mt-3 d-flex justify-content-center">
     <!-- Disabled when quantity is 0 -->
     <button
       aria-label="remove-item-button"
-      class="cursor-pointer rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-700 ring-1 ring-gray-300 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-400"
+      class="app-btn app-btn-secondary rounded px-3 py-2 fw-medium"
       (click)="decrease()"
       [disabled]="quantity() === 0"
     >
@@ -25,7 +25,7 @@
     <!-- Disabled when quantity is 10 -->
     <button
       aria-label="remove-item-button"
-      class="cursor-pointer rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-500 disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-400"
+      class="app-btn app-btn-primary rounded px-3 py-2 fw-medium"
       (click)="increase()"
       [disabled]="isFull()"
     >

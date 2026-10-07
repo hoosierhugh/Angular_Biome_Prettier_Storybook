@@ -9,7 +9,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('Angular Biome Demo');
+  protected readonly title = signal('Angular Biome TwitterBootStrap 5 Demo');
 
   constructor() {
     inject(Title).setTitle(this.title());

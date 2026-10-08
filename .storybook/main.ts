@@ -9,5 +9,14 @@ const config: StorybookConfig = {
     '@storybook/addon-docs',
   ],
   framework: '@storybook/angular-vite',
+  viteFinal: (viteConfig) => {
+    viteConfig.css ??= {};
+    viteConfig.css.preprocessorOptions = {
+      ...viteConfig.css.preprocessorOptions,
+      scss: { quietDeps: true, silenceDeprecations: ['import'] },
+    };
+
+    return viteConfig;
+  },
 };
 export default config;

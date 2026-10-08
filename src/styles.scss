@@ -1,6 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'sass:map';
 
-@import 'bootstrap/dist/css/bootstrap.min.css';
+// The app has no dark mode, so skip Bootstrap's dark theme variables.
+$enable-dark-mode: false;
+
+// Bootstrap's configuration: variables, maps and mixins. These output no CSS on their own.
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+
+// Keep only the utility groups the templates use.
+$utilities: map-get-multiple(
+  $utilities,
+  (
+    'align-items',
+    'background-color',
+    'display',
+    'font-weight',
+    'gap',
+    'justify-content',
+    'margin',
+    'margin-bottom',
+    'margin-end',
+    'margin-top',
+    'margin-x',
+    'margin-y',
+    'min-viewport-height',
+    'padding',
+    'padding-x',
+    'padding-y',
+    'rounded',
+    'text-align',
+    'text-decoration'
+  )
+);
+
+// The app never uses breakpoint versions like d-md-flex, so turn them off.
+@each $name, $utility in $utilities {
+  $utilities: map.set($utilities, $name, map.set($utility, responsive, false));
+}
+
+
+// The parts of Bootstrap this app uses. These output CSS.
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/images';
+@import 'bootstrap/scss/utilities/api';
 
 /*
  * Bootstrap has no equivalent for some of the colors, sizes and spacing this app uses,

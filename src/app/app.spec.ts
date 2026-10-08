@@ -17,12 +17,14 @@ describe('App', () => {
     await fixture.whenStable();
 
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('nav span')?.textContent).toContain('Angular Biome Demo');
+    expect(compiled.querySelector('nav span')?.textContent).toContain(
+      'Angular Biome TwitterBootStrap 5 Demo',
+    );
   });
 
   it('should set the document title', () => {
     TestBed.createComponent(App);
 
-    expect(TestBed.inject(Title).getTitle()).toBe('Angular Biome Demo');
+    expect(TestBed.inject(Title).getTitle()).toBe('Angular Biome TwitterBootStrap 5 Demo');
   });
 });
